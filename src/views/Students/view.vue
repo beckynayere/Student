@@ -22,10 +22,29 @@
                 </tr>
                 
               </thead>
-              <tbody>
-                <tr> 
+              <tbody v-if="this.students.length > 0 ">
+
+                <tr v-for="(student, index) in this.students" :key="index"> 
+                  <td>{{ student.id }}</td>
+                  <td>{{ student.name }}</td>
+                  <td>{{student.course  }}</td>
+                  <td>{{ student.email }}</td>
+                  <td>{{ student.phone }}</td>
+                  <td>{{ student.phonr }}</td>
+                  <td>{{ student.created_at }}</td>
+                  <td>
+                  <RouterLink :to="{ path: '/students' +student.id+'/edit'}" class="btn btn-success mx-2">
+                    Edit
+                  </RouterLink>
+                  <button type="button" class="btn btn-danger mx-2">
+                  Delete
+                </button>
+                </td>
 
                 </tr>
+              </tbody>
+              <tbody v-else>
+
               </tbody>
           </table>
         </div>
@@ -36,7 +55,7 @@
   <script>
 import axios from 'axios'
   export default{
-    name: 'students',
+    name: 'StudentsComponent',
     data(){
       return{
         students: []
