@@ -28,7 +28,7 @@
                     <input type="text" v-model="model.student.phone" class="form control"/>
                 </div>
                 <div class="mb-3">
-                    <button type="button" @click="saveStudent" class="btn btn-primary">Save</button>
+                    <button type="button" @click="saveStudent" class="btn btn-primary">Edit</button>
                 </div>
             </div>
         </div>
