@@ -5,8 +5,10 @@ import StudentCreate from '../views/Students/Create.vue'
 import StudentEdit from '../views/Students/Edit.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-   router: [
+  // history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(process.env.BASE_URL),
+
+   routes: [
     {
       path: '/',
       name: 'home',
@@ -15,9 +17,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      
       component: () => import('../views/AboutView.vue')
     },
     {
@@ -31,11 +31,11 @@ const router = createRouter({
       component: StudentCreate
     },
       {
-      path: 'students/:id/edit',
+      path: "/students/:id/edit",
       name: 'studentEdit',
       component: StudentEdit
      }
-  ]
+  ],
 
 
 });
@@ -43,3 +43,4 @@ const router = createRouter({
 
 
 export default router;
+
