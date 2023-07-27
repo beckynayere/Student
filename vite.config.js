@@ -14,3 +14,8 @@ export default defineConfig({
     }
   }
 })
+
+  module.exports = {
+    // Other configurations...
+    productionSourceMap: true,
+  };

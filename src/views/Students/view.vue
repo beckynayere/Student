@@ -67,9 +67,9 @@ import axios from 'axios'
       // console.log ('i am here')
     },
     methods: {
-      getStudents(){
+      getStudents( ){
 
-        axios.get('').then(res =>{
+        axios.get('http://localhost:8000/api/students/').then(res =>{
           console.log(res)
         });
       }

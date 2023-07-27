@@ -5,8 +5,8 @@ import StudentCreate from '../views/Students/Create.vue'
 import StudentEdit from '../views/Students/Edit.vue'
 
 const router = createRouter({
-  // history: createWebHistory(import.meta.env.BASE_URL),
-  history: createWebHistory(process.env.BASE_URL),
+    history: createWebHistory(import.meta.env.BASE_URL),
+  // history: createWebHistory(process.env.BASE_URL),
 
    routes: [
     {
