@@ -1,5 +1,5 @@
-<script setup ="js">
-import { RouterLink, RouterView } from 'vue-router'
+<!-- <script setup ="js"> -->
+// import { RouterLink, RouterView } from 'vue-router'
 
 </script>
 
@@ -38,7 +38,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 </template>
 
-<script setup>
+<script setup ="js">
 // Your component's script setup code
 import { RouterLink, RouterView } from 'vue-router';
 
