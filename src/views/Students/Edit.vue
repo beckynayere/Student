@@ -54,7 +54,17 @@ import axios from 'axios';
             },
         };
     },
+
+    mounted(){
+        this.getStudentsData(this.$route.params.id);
+    },
     methods: {
+        getStudentsData(studentId){
+            axios.get(`http://localhost:8000/api/students/${studentId}/edit`)
+            .then(res=> {
+                    console.log(res.data.student);
+            });
+        },
 
         saveStudent(){
 

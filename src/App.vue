@@ -1,7 +1,6 @@
 <!-- <script setup ="js"> -->
-// import { RouterLink, RouterView } from 'vue-router'
-
-</script>
+<!-- // import { RouterLink, RouterView } from 'vue-router' -->
+<!-- </script> -->
 
 <template>
   <header>
