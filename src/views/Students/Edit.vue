@@ -71,18 +71,14 @@ import axios from 'axios';
                 if(error.response){
 
                     if(error.response.status == 404) {
-                            mythis.errorList = error.response.data.errors;
+
+                            // mythis.errorList = error.response.data.errors;
+                            alert(error.response.data.message);
                     }
                     
-                } else if (error.request) {
+                    }
 
-                console.log(error.request);
-                } else {
-                console.log('Error', error.message);
-                }
-        
-
-})
+            });
         },
 
         saveStudent(){
