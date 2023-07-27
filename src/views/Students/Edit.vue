@@ -28,7 +28,7 @@
                     <input type="text" v-model="model.student.phone" class="form control"/>
                 </div>
                 <div class="mb-3">
-                    <button type="button" @click="saveStudent" class="btn btn-primary">Edit</button>
+                    <button type="button" @click="updateStudent" class="btn btn-primary">Update</button>
                 </div>
             </div>
         </div>
@@ -81,10 +81,11 @@ import axios from 'axios';
             });
         },
 
-        saveStudent(){
+        updateStudent(){
 
             var mythis = this;
-            axios.post('http://localhost:8000/api/students',  this.model.student)
+            // axios.post('http://localhost:8000/api/students',  this.model.student)
+            axios.put(`http://localhost:8000/api/students/${studentId}/edit`,  this.model.student)
              .then(res => {
 
                 console.log(res.data)
