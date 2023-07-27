@@ -63,7 +63,26 @@ import axios from 'axios';
             axios.get(`http://localhost:8000/api/students/${studentId}/edit`)
             .then(res=> {
                     console.log(res.data.student);
-            });
+                    // this.model.student = res.data.student.name
+                    this.model.student = res.data.student
+                })
+                .catch(function (error) {
+
+                if(error.response){
+
+                    if(error.response.status == 404) {
+                            mythis.errorList = error.response.data.errors;
+                    }
+                    
+                } else if (error.request) {
+
+                console.log(error.request);
+                } else {
+                console.log('Error', error.message);
+                }
+        
+
+})
         },
 
         saveStudent(){
