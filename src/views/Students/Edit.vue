@@ -62,7 +62,9 @@ import axios from 'axios';
     },
     methods: {
         getStudentsData(studentId){
+            // axios.get(`http://localhost:8000/api/students/${studentId}/edit`)
             axios.get(`http://localhost:8000/api/students/${studentId}/edit`)
+
             .then(res=> {
                     console.log(res.data.student);
                     // this.model.student = res.data.student.name
