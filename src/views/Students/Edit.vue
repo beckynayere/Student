@@ -42,6 +42,7 @@ import axios from 'axios';
     name: 'studentEdit',
     data(){
         return{
+            studentId: '',
             // errorList:'', 
             errorList: {},
             model :{
@@ -56,6 +57,7 @@ import axios from 'axios';
     },
 
     mounted(){
+        this.studentId = this.$route.params.id;
         this.getStudentsData(this.$route.params.id);
     },
     methods: {
@@ -85,21 +87,23 @@ import axios from 'axios';
 
             var mythis = this;
             // axios.post('http://localhost:8000/api/students',  this.model.student)
-            axios.put(`http://localhost:8000/api/students/${studentId}/edit`,  this.model.student)
+            axios.put(`http://localhost:8000/api/students/${this.studentId}/edit`,  this.model.student)
              .then(res => {
 
                 console.log(res.data)
                 alert(res.data.message);
 
-                this.model.student = {
-                    name: '',
-                    course: '',
-                    email:'',
-                    phone: ''
-
-                }
-                // this.errorList = '';
                 this.errorList = {};
+// comment this.model array after add put request
+                // this.model.student = {
+                //     name: '',
+                //     course: '',
+                //     email:'',
+                //     phone: ''
+
+                // }
+                // this.errorList = '';
+                // this.errorList = {};
              })
              .catch(function (error) {
 
@@ -107,6 +111,11 @@ import axios from 'axios';
 
                     if(error.response.status == 422) {
                             mythis.errorList = error.response.data.errors;
+                    }
+
+                    if(error.response.status == 404) {
+                            // mythis.errorList = error.response.data.errors;
+                            alert(error.response.data.message)
                     }
                       
                 } else if (error.request) {
