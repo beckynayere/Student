@@ -22,7 +22,8 @@
                 </tr>
                 
               </thead>
-              <tbody v-if="this.students.length > 0 ">
+              <!-- <tbody v-if="this.students.length > 0 "> -->
+                <tbody v-if="students.length> 0" >
 
                 <tr v-for="(student, index) in this.students" :key="index"> 
                   <td>{{ student.id }}</td>
@@ -30,7 +31,6 @@
                   <td>{{student.course  }}</td>
                   <td>{{ student.email }}</td>
                   <td>{{ student.phone }}</td>
-                  <td>{{ student.phonr }}</td>
                   <td>{{ student.created_at }}</td>
                   <td>
                   <RouterLink :to="{ path: '/students' +student.id+'/edit'}" class="btn btn-success mx-2">

@@ -38,6 +38,12 @@ import { RouterLink, RouterView } from 'vue-router'
 
 </template>
 
+<script setup>
+// Your component's script setup code
+import { RouterLink, RouterView } from 'vue-router';
+
+// Other script setup code
+</script>
 <style scoped>
 /* Your CSS styles */
 
