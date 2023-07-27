@@ -42,16 +42,17 @@ import axios from 'axios';
     name: 'studentEdit',
     data(){
         return{
-            errorList:'', 
+            // errorList:'', 
+            errorList: {},
             model :{
                 student: {
                     name: '',
                     course: '',
                     email: '',
-                    phone: ''
-                }
-            }
-        }
+                    phone: '',
+                },
+            },
+        };
     },
     methods: {
 
@@ -71,7 +72,8 @@ import axios from 'axios';
                     phone: ''
 
                 }
-                this.errorList = '';
+                // this.errorList = '';
+                this.errorList = {};
              })
              .catch(function (error) {
 
