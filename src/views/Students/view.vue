@@ -70,7 +70,8 @@ import axios from 'axios'
       getStudents( ){
 
         axios.get('http://localhost:8000/api/students/').then(res =>{
-          console.log(res)
+          this.students = res.data.students;
+            // console.log(res)
         });
       }
     },
